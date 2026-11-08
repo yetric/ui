@@ -79,6 +79,11 @@ export class YtToggleButton extends LitElement {
     this.named = false;
   }
 
+  /** Server-rendered (declarative) shadow roots have their slots assigned before any listener exists, so check once. */
+  protected override firstUpdated(): void {
+    this.named = (this.renderRoot.querySelector('slot[name="name"]') as HTMLSlotElement | null)?.assignedNodes().length! > 0;
+  }
+
   private toggle(): void {
     this.pressed = !this.pressed;
     this.dispatchEvent(new CustomEvent("yt-toggle", { bubbles: true, composed: true, detail: { pressed: this.pressed } }));

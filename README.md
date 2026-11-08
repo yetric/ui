@@ -4,7 +4,7 @@ Small, framework-independent Lit web components with the `yt-` prefix. Shipped a
 the consuming app's bundler compiles it and controls Lit's version (a peer dependency).
 
 ```sh
-bun add github:yetric/ui#v0.3.0     # or npm: "@yetric/ui": "github:yetric/ui#v0.3.0"
+bun add github:yetric/ui#v0.3.1     # or npm: "@yetric/ui": "github:yetric/ui#v0.3.1"
 ```
 
 ```ts
