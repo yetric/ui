@@ -1,13 +1,12 @@
 import { LitElement, css, html } from "lit";
 
 /**
- * A navigation pill: `<yt-chip><a href="/kategori/musik" aria-current="page">Musik</a></yt-chip>`.
+ * A navigation pill: `<yt-chip><a href="/music" aria-current="page">Music</a></yt-chip>`.
  *
  * The link stays in the page's markup and is what the pill is drawn on, so navigation, focus and the accessible name
- * work without the component, and the current state has one source: the link's `aria-current`, which the server sets.
+ * work without the component, and the current state has one source: the link's `aria-current`.
  *
- * Purely presentational and never delivered in fragments, so no page loads this script: the server's declarative
- * shadow root is the whole component. The class exists to define the element and to document the contract.
+ * Purely presentational: with a server-rendered Declarative Shadow DOM shell it is fully painted without JavaScript.
  */
 export class YtChip extends LitElement {
   static override styles = css`

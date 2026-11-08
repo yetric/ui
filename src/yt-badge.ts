@@ -1,12 +1,11 @@
 import { LitElement, css, html } from "lit";
 
 /**
- * A short status label: `<yt-badge>Gratis</yt-badge>`, or `variant="warn"` (cancelled, postponed) / `variant="dev"`
- * (local-development markers). The text is slotted, so it exists without the component and Go owns what it says.
+ * A short status label: `<yt-badge>Free</yt-badge>`, with `variant="warn"` for warnings and `variant="notice"` for
+ * neutral highlights. The text is slotted, so it exists in the page without the component and the page owns what it says.
  *
- * Purely presentational: the server's shadow root is the whole component, so no page loads this script (it exists
- * to render that shell at build time and to define the element's contract). `parseFragment` attaches the shadow roots
- * of fragments, so cards added by "Visa fler" are styled without it too.
+ * Purely presentational: with a server-rendered Declarative Shadow DOM shell the component is fully painted without
+ * JavaScript. The class defines the element and renders that shell at build time.
  */
 export class YtBadge extends LitElement {
   static override styles = css`
@@ -29,15 +28,15 @@ export class YtBadge extends LitElement {
       background: var(--yt-warn-bg, #ffebe9);
       border-color: var(--yt-warn-border, #cf222e);
     }
-    :host([variant="dev"]) span {
-      background: var(--yt-dev-bg, #fff8c5);
-      border-color: var(--yt-dev-border, #9a6700);
+    :host([variant="notice"]) span {
+      background: var(--yt-notice-bg, #fff8c5);
+      border-color: var(--yt-notice-border, #9a6700);
     }
   `;
 
   static override properties = { variant: { type: String } };
 
-  /** "warn" or "dev"; anything else is the neutral badge. Set as an attribute by the server, not reflected. */
+  /** "warn" or "notice"; anything else is the neutral badge. Set as an attribute, not reflected. */
   declare variant: string;
 
   constructor() {
