@@ -1,6 +1,6 @@
 {
   "name": "@yetric/ui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Yetric Lit component library (yt-* web components)",
   "private": true,
   "type": "module",
@@ -8,7 +8,7 @@
     "./yt-badge": "./src/yt-badge.ts",
     "./yt-chip": "./src/yt-chip.ts"
   },
-  "files": ["src", "tsconfig.json"],
+  "files": ["src"],
   "peerDependencies": {
     "lit": "^3.3.3"
   }

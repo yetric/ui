@@ -1,5 +1,4 @@
 import { LitElement, css, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
 
 /**
  * A short status label: `<yt-badge>Gratis</yt-badge>`, or `variant="warn"` (cancelled, postponed) / `variant="dev"`
@@ -9,7 +8,6 @@ import { customElement, property } from "lit/decorators.js";
  * to render that shell at build time and to define the element's contract). `parseFragment` attaches the shadow roots
  * of fragments, so cards added by "Visa fler" are styled without it too.
  */
-@customElement("yt-badge")
 export class YtBadge extends LitElement {
   static override styles = css`
     :host {
@@ -37,10 +35,19 @@ export class YtBadge extends LitElement {
     }
   `;
 
+  static override properties = { variant: { type: String } };
+
   /** "warn" or "dev"; anything else is the neutral badge. Set as an attribute by the server, not reflected. */
-  @property() variant = "";
+  declare variant: string;
+
+  constructor() {
+    super();
+    this.variant = "";
+  }
 
   protected override render() {
     return html`<span><slot></slot></span>`;
   }
 }
+
+if (!customElements.get("yt-badge")) customElements.define("yt-badge", YtBadge);

@@ -1,5 +1,4 @@
 import { LitElement, css, html } from "lit";
-import { customElement } from "lit/decorators.js";
 
 /**
  * A navigation pill: `<yt-chip><a href="/kategori/musik" aria-current="page">Musik</a></yt-chip>`.
@@ -10,7 +9,6 @@ import { customElement } from "lit/decorators.js";
  * Purely presentational and never delivered in fragments, so no page loads this script: the server's declarative
  * shadow root is the whole component. The class exists to define the element and to document the contract.
  */
-@customElement("yt-chip")
 export class YtChip extends LitElement {
   static override styles = css`
     :host {
@@ -40,3 +38,5 @@ export class YtChip extends LitElement {
     return html`<slot></slot>`;
   }
 }
+
+if (!customElements.get("yt-chip")) customElements.define("yt-chip", YtChip);
