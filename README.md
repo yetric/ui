@@ -19,6 +19,8 @@ import "@yetric/ui/yt-badge";       // one entry per component, import only what
 | `yt-pagination` | Lays out your prev/next links and current-page label; a script can add a `more` control and set `enhanced` |
 | `yt-chip` | Navigation pill around a slotted link; current state from the link's `aria-current` |
 
+Component styles live in `src/yt-*.css` and are imported with `?inline`, so the consuming bundler must support that (Vite and Vite-based tools do).
+
 Content is slotted, so it stays in your HTML. Styling reads `--yt-*` custom properties (`--yt-text`, `--yt-surface`,
 `--yt-border`, `--yt-warn-*`, `--yt-notice-*`, `--yt-pressed-*`, ...) with built-in fallbacks, so no token stylesheet is required.
 

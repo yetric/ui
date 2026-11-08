@@ -1,5 +1,5 @@
-import { LitElement, html } from "lit";
-import { styles } from "./yt-chip.styles";
+import { LitElement, html, unsafeCSS } from "lit";
+import styles from "./yt-chip.css?inline";
 
 /**
  * A navigation pill: `<yt-chip><a href="/music" aria-current="page">Music</a></yt-chip>`.
@@ -10,7 +10,7 @@ import { styles } from "./yt-chip.styles";
  * Purely presentational: with a server-rendered Declarative Shadow DOM shell it is fully painted without JavaScript.
  */
 export class YtChip extends LitElement {
-  static override styles = styles;
+  static override styles = unsafeCSS(styles);
 
   protected override render() {
     return html`<slot></slot>`;
