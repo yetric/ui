@@ -1,5 +1,5 @@
-import { LitElement, html, unsafeCSS } from "lit";
-import styles from "./yt-pagination.css?inline";
+import { LitElement, html } from "lit";
+import { styles } from "./yt-pagination.styles";
 
 /**
  * Lays out the controls of a paged list, inside a `<nav>` you own:
@@ -19,7 +19,7 @@ import styles from "./yt-pagination.css?inline";
  * Presentational: with a server-rendered Declarative Shadow DOM shell it is fully painted without JavaScript.
  */
 export class YtPagination extends LitElement {
-  static override styles = unsafeCSS(styles);
+  static override styles = styles;
 
   protected override render() {
     return html`<slot name="prev"></slot><slot></slot><slot name="next"></slot><slot name="more"></slot>`;

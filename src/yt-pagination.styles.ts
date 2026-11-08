@@ -1,0 +1,4 @@
+// Generated from yt-pagination.css; do not edit.
+import { unsafeCSS } from "lit";
+
+export const styles = unsafeCSS(":host {\n  display: flex;\n  flex-wrap: wrap;\n  gap: var(--yt-space-4, 1rem);\n  align-items: center;\n}\n:host([enhanced]) ::slotted([slot=\"prev\"]),\n:host([enhanced]) ::slotted([slot=\"next\"]) {\n  display: none;\n}\n::slotted([slot=\"more\"]) {\n  padding: var(--yt-space-2, 0.5rem) var(--yt-space-4, 1rem);\n  font: inherit;\n  color: var(--yt-text, #1f2328);\n  background: var(--yt-bg, #ffffff);\n  border: 1px solid var(--yt-border, #d1d9e0);\n  border-radius: var(--yt-radius, 6px);\n  cursor: pointer;\n}\n::slotted([slot=\"more\"]:hover) {\n  background: var(--yt-surface, #f6f8fa);\n}\n::slotted([slot=\"more\"]:focus-visible) {\n  outline: 2px solid var(--yt-focus, #0969da);\n  outline-offset: 2px;\n}\n");

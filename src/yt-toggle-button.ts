@@ -1,5 +1,5 @@
-import { LitElement, html, unsafeCSS } from "lit";
-import styles from "./yt-toggle-button.css?inline";
+import { LitElement, html } from "lit";
+import { styles } from "./yt-toggle-button.styles";
 
 /**
  * A toggle button: `<yt-toggle-button>Save</yt-toggle-button>`. It keeps a `pressed` state (reflected as an attribute,
@@ -13,7 +13,7 @@ import styles from "./yt-toggle-button.css?inline";
  * control. The server-rendered shell is always the unpressed state; apply stored state after the element has updated.
  */
 export class YtToggleButton extends LitElement {
-  static override styles = unsafeCSS(styles);
+  static override styles = styles;
 
   static override properties = {
     pressed: { type: Boolean, reflect: true },

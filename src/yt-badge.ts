@@ -1,5 +1,5 @@
-import { LitElement, html, unsafeCSS } from "lit";
-import styles from "./yt-badge.css?inline";
+import { LitElement, html } from "lit";
+import { styles } from "./yt-badge.styles";
 
 /**
  * A short status label: `<yt-badge>Free</yt-badge>`, with `variant="warn"` for warnings and `variant="notice"` for
@@ -9,7 +9,7 @@ import styles from "./yt-badge.css?inline";
  * JavaScript. The class defines the element and renders that shell at build time.
  */
 export class YtBadge extends LitElement {
-  static override styles = unsafeCSS(styles);
+  static override styles = styles;
 
   static override properties = { variant: { type: String } };
 

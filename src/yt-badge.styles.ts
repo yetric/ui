@@ -1,0 +1,4 @@
+// Generated from yt-badge.css; do not edit.
+import { unsafeCSS } from "lit";
+
+export const styles = unsafeCSS(":host {\n  display: inline-block;\n  max-width: 100%;\n  margin-right: var(--yt-space-1, 0.25rem);\n}\nspan {\n  display: block;\n  padding: 0 var(--yt-space-2, 0.5rem);\n  color: var(--yt-text, #1f2328);\n  background: var(--yt-surface, #f6f8fa);\n  border: 1px solid var(--yt-border, #d1d9e0);\n  border-radius: var(--yt-radius-pill, 999px);\n  font-size: var(--yt-text-sm, 0.875rem);\n}\n:host([variant=\"warn\"]) span {\n  color: var(--yt-warn-text, #82071e);\n  background: var(--yt-warn-bg, #ffebe9);\n  border-color: var(--yt-warn-border, #cf222e);\n}\n:host([variant=\"notice\"]) span {\n  background: var(--yt-notice-bg, #fff8c5);\n  border-color: var(--yt-notice-border, #9a6700);\n}\n");

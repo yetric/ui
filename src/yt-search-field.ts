@@ -1,5 +1,5 @@
-import { LitElement, html, unsafeCSS } from "lit";
-import styles from "./yt-search-field.css?inline";
+import { LitElement, html } from "lit";
+import { styles } from "./yt-search-field.styles";
 
 /**
  * A search field for a form you own:
@@ -19,7 +19,7 @@ import styles from "./yt-search-field.css?inline";
  * Presentational: with a server-rendered Declarative Shadow DOM shell it is fully painted without JavaScript.
  */
 export class YtSearchField extends LitElement {
-  static override styles = unsafeCSS(styles);
+  static override styles = styles;
 
   protected override render() {
     return html`<div class="field"><slot name="label"></slot><slot name="input"></slot><slot name="button"></slot></div>`;
