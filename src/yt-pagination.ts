@@ -1,4 +1,5 @@
-import { LitElement, css, html } from "lit";
+import { LitElement, html } from "lit";
+import { styles } from "./yt-pagination.styles";
 
 /**
  * Lays out the controls of a paged list, inside a `<nav>` you own:
@@ -18,34 +19,7 @@ import { LitElement, css, html } from "lit";
  * Presentational: with a server-rendered Declarative Shadow DOM shell it is fully painted without JavaScript.
  */
 export class YtPagination extends LitElement {
-  static override styles = css`
-    :host {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--yt-space-4, 1rem);
-      align-items: center;
-    }
-    :host([enhanced]) ::slotted([slot="prev"]),
-    :host([enhanced]) ::slotted([slot="next"]) {
-      display: none;
-    }
-    ::slotted([slot="more"]) {
-      padding: var(--yt-space-2, 0.5rem) var(--yt-space-4, 1rem);
-      font: inherit;
-      color: var(--yt-text, #1f2328);
-      background: var(--yt-bg, #ffffff);
-      border: 1px solid var(--yt-border, #d1d9e0);
-      border-radius: var(--yt-radius, 6px);
-      cursor: pointer;
-    }
-    ::slotted([slot="more"]:hover) {
-      background: var(--yt-surface, #f6f8fa);
-    }
-    ::slotted([slot="more"]:focus-visible) {
-      outline: 2px solid var(--yt-focus, #0969da);
-      outline-offset: 2px;
-    }
-  `;
+  static override styles = styles;
 
   protected override render() {
     return html`<slot name="prev"></slot><slot></slot><slot name="next"></slot><slot name="more"></slot>`;

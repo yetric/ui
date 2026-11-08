@@ -20,6 +20,8 @@ import "@yetric/ui/yt-badge";       // one entry per component, import only what
 | `yt-alert` | Message box with slotted text; `variant` info/notice/warn, `banner` for a full-width bar; you choose the ARIA role |
 | `yt-chip` | Navigation pill around a slotted link; current state from the link's `aria-current` |
 
+Component styles are authored in `src/yt-*.css` and compiled into committed TypeScript modules for bundler-independent consumption. After editing CSS, run `node scripts/build-styles.mjs`; to check generated files are up to date, run `node scripts/build-styles.mjs --check`.
+
 Content is slotted, so it stays in your HTML. Styling reads `--yt-*` custom properties (`--yt-text`, `--yt-surface`,
 `--yt-border`, `--yt-warn-*`, `--yt-notice-*`, `--yt-pressed-*`, ...) with built-in fallbacks, so no token stylesheet is required.
 
