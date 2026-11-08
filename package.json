@@ -1,13 +1,14 @@
 {
   "name": "@yetric/ui",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Yetric Lit component library (yt-* web components)",
   "private": true,
   "type": "module",
   "exports": {
     "./yt-badge": "./src/yt-badge.ts",
     "./yt-chip": "./src/yt-chip.ts",
-    "./yt-toggle-button": "./src/yt-toggle-button.ts"
+    "./yt-toggle-button": "./src/yt-toggle-button.ts",
+    "./yt-search-field": "./src/yt-search-field.ts"
   },
   "files": [
     "src"
